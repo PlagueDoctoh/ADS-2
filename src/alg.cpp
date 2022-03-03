@@ -8,7 +8,7 @@ double pown(double value, uint16_t n) {
     return 1;
   } else if (n == 1) {
     return value;
-  } else if (n > 1) {
+  } else {
     return pow(value, n);
   }
 }
