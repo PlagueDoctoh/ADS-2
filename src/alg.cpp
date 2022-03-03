@@ -14,7 +14,7 @@ double pown(double value, uint16_t n) {
 }
 
 uint64_t fact(uint16_t n) {
-  uint64_t fac=1;
+  uint64_t fac = 1;
   if (n > 1) {
     for (int i = 1; i <= n; i++)
       fac *= i;
@@ -37,20 +37,20 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-  double sinx=x;
+  double sinx = x;
   for (int m = count; m > 0; m--) {
     if (count%2 != 0) {
-      sinx -= calcItem(x, count);
+      sinx -= calcItem(x, m);
     }
   }
   return sinx;
 }
 
 double cosn(double x, uint16_t count) {
-  double cosx=1;
+  double cosx = 1;
   for (int k = count; k > 0; k--) {
     if (count%2 == 0) {
-      cosx -= calcItem(x, count);
+      cosx -= calcItem(x, k);
     }
   }
   return cosx;
