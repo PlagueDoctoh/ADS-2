@@ -37,37 +37,17 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-  double sinx = x;
-  double g = 0;
-  for (int m = 2; m <= count; m++) {
-    if (m%2 != 0) {
-      sinx -= calcItem(x, m);
-      g += m+1;
-      break;
-    }
-  }
-  for (int o = g; o <= count; o++) {
-    if (o%2 != 0) {
-      sinx += calcItem(x, o);
-    }
+  double sinx = 0;
+  for (int u = count; u > 0; u--) {
+    sinx += pow((-1), u-1)*(pow(x, 2*u-1)/fact(2*u-1));
   }
   return sinx;
 }
 
 double cosn(double x, uint16_t count) {
-  double cosx = 1;
-  double d = 0;
-  for (int k = 2; k <= count; k++) {
-    if (k%2 == 0) {
-      cosx -= calcItem(x, k);
-      d = k+1;
-      break;
-    }
+  double cosx = 0;
+  for (int j = count; j > 0; j--) {
+    cosx += pow((-1), j-1)*(pow(x, 2*j-2)/fact(2*j-2));
   }
-  for (int a = d; a <= count; a++) {
-    if (a%2 == 0) {
-      cosx += calcItem(x, a);
-    }
-  }
-  return cosx;
+return cosx;
 }
