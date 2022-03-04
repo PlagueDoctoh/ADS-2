@@ -11,6 +11,7 @@ double pown(double value, uint16_t n) {
   } else {
     for (int i = 1; i < n; i++)
       rez = rez*value;
+    return rez;
   }
 }
 
